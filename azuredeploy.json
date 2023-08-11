@@ -11,11 +11,11 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "South Central US",
+      "defaultValue": "West Europe",
       "allowedValues": [
         "South Central US",
         "East US",
-        "France Central"
+        "West Europe"
       ],
       "metadata": {
         "description": "Location where all resources will be deployed. This value defaults to the **South Central US** region."
@@ -30,7 +30,7 @@
     },
     "cosmosDbEnableFreeTier": {
       "type": "bool",
-      "defaultValue": true,
+      "defaultValue": false,
       "metadata": {
         "description": "Boolean indicating whether Azure Cosmos DB free tier should be used for the account. This defaults to **true**."
       }
@@ -59,7 +59,7 @@
     },
     "appGitRepository": {
       "type": "string",
-      "defaultValue": "https://github.com/azure-samples/cosmosdb-chatgpt.git",
+      "defaultValue": "https://github.com/bpgsxs1000gt/CosmosDB-GPT",
       "metadata": {
         "description": "Git repository URL for the chat application. This defaults to the [`azure-samples/cosmosdb-chatgpt`](https://github.com/azure-samples/cosmosdb-chatgpt) repository."
       }
@@ -89,10 +89,10 @@
       "name": "[format('{0}-cosmos-nosql', parameters('name'))]",
       "enableFreeTier": "[parameters('cosmosDbEnableFreeTier')]",
       "database": {
-        "name": "chatdatabase"
+        "name": "bpchatdatabase"
       },
       "container": {
-        "name": "chatcontainer",
+        "name": "bpchatcontainer",
         "throughput": 400
       }
     },
